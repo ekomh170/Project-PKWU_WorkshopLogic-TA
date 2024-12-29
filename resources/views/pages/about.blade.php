@@ -13,7 +13,7 @@
         style="background-image: url({{ $assetFunction('landing/img/page-title-bg.jpg') }});">
         <div class="container position-relative">
             <h1>Tentang Kami</h1>
-            <p>Menyediakan layanan logistik cepat dan handal yang memenuhi kebutuhan Anda.</p>
+            <p>Workshop Logic hadir untuk meningkatkan literasi dan keterampilan teknologi generasi muda.</p>
             <nav class="breadcrumbs">
                 <ol>
                     <li><a href="{{ route('home') }}">Beranda</a></li>
@@ -36,16 +36,21 @@
                 <div class="col-lg-6 content order-last order-lg-first" data-aos="fade-up" data-aos-delay="100">
                     <h3>Tentang Kami</h3>
                     <p>
-                        Kami adalah mitra terpercaya Anda dalam memberikan solusi logistik yang cepat, aman, dan efisien.
-                        Dengan pengalaman yang kaya, kami memastikan setiap pengiriman berjalan lancar dan tepat waktu.
+                        Workshop Logic adalah platform pelatihan teknologi yang bertujuan untuk meningkatkan literasi
+                        digital
+                        dan keterampilan teknologi, khususnya di kalangan pelajar SMP, SMK, mahasiswa, serta komunitas anak
+                        muda
+                        seperti Karang Taruna. Kami hadir sebagai solusi atas minimnya akses pelatihan teknologi praktis di
+                        usia
+                        sekolah, dengan menyediakan materi pelatihan mulai dari dasar hingga lanjutan.
                     </p>
                     <ul>
-                        @foreach ([['icon' => 'bi-diagram-3', 'title' => 'Layanan yang Komprehensif', 'description' => 'Kami menyediakan berbagai solusi logistik untuk memenuhi kebutuhan Anda.'], ['icon' => 'bi-fullscreen-exit', 'title' => 'Inovasi dan Teknologi', 'description' => 'Menggunakan teknologi terkini untuk memastikan kecepatan dan keakuratan layanan kami.'], ['icon' => 'bi-broadcast', 'title' => 'Dukungan Pelanggan 24/7', 'description' => 'Tim kami siap membantu Anda kapan pun Anda butuhkan.']] as $item)
+                        @foreach ([['icon' => 'bi-diagram-3', 'title' => 'Misi Kami', 'description' => 'Memberdayakan generasi muda untuk menghadapi tantangan era digital melalui pelatihan berbasis praktik.'], ['icon' => 'bi-fullscreen-exit', 'title' => 'Pelatihan Fleksibel', 'description' => 'Solusi pelatihan fleksibel yang dapat diakses secara online maupun offline.'], ['icon' => 'bi-broadcast', 'title' => 'Peningkatan Karier', 'description' => 'Membantu peserta menambah keterampilan yang relevan untuk dunia kerja.']] as $about)
                             <li>
-                                <i class="bi {{ $item['icon'] }}"></i>
+                                <i class="bi {{ $about['icon'] }}"></i>
                                 <div>
-                                    <h5>{{ $item['title'] }}</h5>
-                                    <p>{{ $item['description'] }}</p>
+                                    <h5>{{ $about['title'] }}</h5>
+                                    <p>{{ $about['description'] }}</p>
                                 </div>
                             </li>
                         @endforeach
@@ -60,7 +65,7 @@
     <section id="stats" class="stats section">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-4">
-                @foreach ([['count' => 232, 'label' => 'Klien'], ['count' => 521, 'label' => 'Proyek'], ['count' => 1453, 'label' => 'Jam Dukungan'], ['count' => 32, 'label' => 'Pekerja']] as $stat)
+                @foreach ([['count' => 232, 'label' => 'Peserta'], ['count' => 521, 'label' => 'Pelatihan'], ['count' => 1453, 'label' => 'Jam Dukungan'], ['count' => 32, 'label' => 'Pengajar']] as $stat)
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
                             <span data-purecounter-start="0" data-purecounter-end="{{ $stat['count'] }}"
@@ -79,11 +84,18 @@
         <div class="container section-title" data-aos="fade-up">
             <span>Tim Kami</span>
             <h2>Tim Kami</h2>
-            <p>Orang-orang hebat di balik kesuksesan kami.</p>
+            <p>Orang-orang hebat di balik kesuksesan Workshop Logic.</p>
         </div>
         <div class="container">
             <div class="row">
-                @foreach ([['image' => 'team/team-1.jpg', 'name' => 'Walter White', 'role' => 'Pengembangan Web', 'description' => 'Menciptakan solusi digital yang efisien dan inovatif.'], ['image' => 'team/team-2.jpg', 'name' => 'Sarah Jhinson', 'role' => 'Pemasaran', 'description' => 'Memastikan layanan kami dikenal luas dan dihargai.'], ['image' => 'team/team-3.jpg', 'name' => 'William Anderson', 'role' => 'Konten', 'description' => 'Menyampaikan pesan kami dengan cara yang menarik dan informatif.']] as $member)
+                @foreach ([
+            ['image' => 'team/team-1.jpg', 'name' => 'Nur Fadillah', 'role' => 'Hustler', 'description' => 'Meningkatkan koneksi dan peluang untuk Workshop Logic melalui strategi yang efektif.'],
+            ['image' => 'team/team-1.jpg', 'name' => 'Muhammad Andhika Thata', 'role' => 'Hustler', 'description' => 'Mengelola peluang bisnis dan memperluas cakupan kemitraan kami.'],
+            ['image' => 'team/team-3.jpg', 'name' => 'Eko Muchamad Haryono', 'role' => 'Hacker', 'description' => 'Mengembangkan solusi teknologi yang inovatif dan efisien.'],
+            ['image' => 'team/team-2.jpg', 'name' => 'Fatiya Labibah', 'role' => 'Hacker', 'description' => 'Menyediakan solusi teknologi mutakhir untuk kebutuhan pelatihan.'],
+            ['image' => 'team/team-3.jpg', 'name' => 'Muhammad Zen Alby', 'role' => 'Hipster', 'description' => 'Mendesain pengalaman visual yang menarik dan kreatif untuk peserta pelatihan.'],
+            ['image' => 'team/team-2.jpg', 'name' => 'Nurmila', 'role' => 'Hipster', 'description' => 'Mengembangkan branding kreatif dan mendukung identitas visual Workshop Logic.'],
+        ] as $member)
                     <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}">
                         <div class="member">
                             <img src="{{ $assetFunction('landing/img/' . $member['image']) }}" class="img-fluid"
@@ -105,6 +117,7 @@
             </div>
         </div>
     </section>
+
     <!-- Akhir Bagian Tim -->
 
     <!-- Bagian Testimonial -->
@@ -128,7 +141,7 @@
                     }
                 </script>
                 <div class="swiper-wrapper">
-                    @foreach ([['image' => 'testimonials/testimonials-1.jpg', 'name' => 'Saul Goodman', 'role' => 'CEO & Founder', 'content' => 'Layanan ini sangat membantu bisnis saya menjadi lebih efisien.'], ['image' => 'testimonials/testimonials-2.jpg', 'name' => 'Sarah Wilsson', 'role' => 'Desainer', 'content' => 'Saya sangat puas dengan kecepatan dan ketepatan waktu pengiriman.']] as $testimonial)
+                    @foreach ([['image' => 'testimonials/testimonials-1.jpg', 'name' => 'Saul Goodman', 'role' => 'CEO & Founder', 'content' => 'Pelatihan ini sangat membantu saya untuk meningkatkan keterampilan.'], ['image' => 'testimonials/testimonials-2.jpg', 'name' => 'Sarah Wilsson', 'role' => 'Desainer', 'content' => 'Sangat puas dengan materi yang mudah dipahami dan aplikatif.']] as $testimonial)
                         <div class="swiper-slide">
                             <div class="testimonial-item">
                                 <img src="{{ $assetFunction('landing/img/' . $testimonial['image']) }}"

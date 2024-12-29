@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Beranda - Logis')
+@section('title', 'Beranda - Workshop Logic')
 
 @section('content')
     @php
@@ -14,20 +14,20 @@
         <div class="container">
             <div class="row gy-4 d-flex justify-content-between">
                 <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                    <h2 data-aos="fade-up">Mitra Pengiriman Cepat Anda</h2>
+                    <h2 data-aos="fade-up">Mitra Anda dalam Literasi Teknologi</h2>
                     <p data-aos="fade-up" data-aos-delay="100">
-                        Menangani kebutuhan pengiriman dengan cepat dan terpercaya. Solusi tepat untuk segala kebutuhan
-                        logistik Anda.
+                        Workshop Logic membantu generasi muda menguasai keterampilan teknologi praktis untuk menghadapi
+                        tantangan dunia digital.
                     </p>
 
                     <form action="#" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up"
                         data-aos-delay="200">
-                        <input type="text" class="form-control" placeholder="Kode Pos atau Kota Anda. Contoh: Jakarta">
+                        <input type="text" class="form-control" placeholder="Bidang pelatihan yang Anda butuhkan">
                         <button type="submit" class="btn btn-primary">Cari</button>
                     </form>
 
                     <div class="row gy-4" data-aos="fade-up" data-aos-delay="300">
-                        @foreach ([['count' => 232, 'label' => 'Klien'], ['count' => 521, 'label' => 'Proyek'], ['count' => 1453, 'label' => 'Dukungan'], ['count' => 32, 'label' => 'Pekerja']] as $stat)
+                        @foreach ([['count' => 232, 'label' => 'Peserta'], ['count' => 521, 'label' => 'Pelatihan'], ['count' => 1453, 'label' => 'Jam Pelatihan'], ['count' => 32, 'label' => 'Pengajar']] as $stat)
                             <div class="col-lg-3 col-6">
                                 <div class="stats-item text-center w-100 h-100">
                                     <span data-purecounter-start="0" data-purecounter-end="{{ $stat['count'] }}"
@@ -52,7 +52,7 @@
     <section id="featured-services" class="featured-services section">
         <div class="container">
             <div class="row gy-4">
-                @foreach ([['icon' => 'fa-cart-flatbed', 'title' => 'Layanan Cepat', 'description' => 'Pengiriman cepat dan aman, menjamin kepuasan Anda.'], ['icon' => 'fa-truck', 'title' => 'Transportasi Modern', 'description' => 'Kendaraan terkini untuk pengiriman barang Anda dengan aman.'], ['icon' => 'fa-truck-ramp-box', 'title' => 'Manajemen Kargo', 'description' => 'Penanganan kargo yang efisien untuk memastikan kelancaran logistik.']] as $service)
+                @foreach ([['icon' => 'fa-graduation-cap', 'title' => 'Pelatihan Praktis', 'description' => 'Pelatihan berbasis praktik untuk membantu Anda menguasai teknologi secara langsung.'], ['icon' => 'fa-book', 'title' => 'Materi Komprehensif', 'description' => 'Kombinasi materi dasar hingga lanjutan sesuai kebutuhan dan minat.'], ['icon' => 'fa-chalkboard-teacher', 'title' => 'Pengajar Profesional', 'description' => 'Dibimbing oleh pengajar berpengalaman dalam dunia teknologi.']] as $service)
                     <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up"
                         data-aos-delay="{{ $loop->iteration * 100 }}">
                         <div class="icon flex-shrink-0"><i class="fa-solid {{ $service['icon'] }}"></i></div>
@@ -79,11 +79,11 @@
                     <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
                 </div>
                 <div class="col-lg-6 content order-last order-lg-first" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Tentang Kami</h3>
-                    <p>Kami menyediakan layanan logistik terbaik untuk kebutuhan Anda. Kepercayaan Anda adalah prioritas
-                        kami.</p>
+                    <h3>Tentang Workshop Logic</h3>
+                    <p>Workshop Logic adalah solusi untuk membantu pelajar dan komunitas muda menguasai teknologi praktis
+                        yang relevan dengan kebutuhan dunia kerja.</p>
                     <ul>
-                        @foreach ([['icon' => 'bi-diagram-3', 'title' => 'Layanan Terpercaya', 'description' => 'Dukungan penuh untuk kebutuhan logistik Anda.'], ['icon' => 'bi-fullscreen-exit', 'title' => 'Pengelolaan Efisien', 'description' => 'Manajemen pengiriman yang efisien dan tepat waktu.'], ['icon' => 'bi-broadcast', 'title' => 'Jangkauan Luas', 'description' => 'Kami hadir di berbagai wilayah untuk memenuhi kebutuhan Anda.']] as $about)
+                        @foreach ([['icon' => 'bi-lightbulb', 'title' => 'Keterampilan Teknologi', 'description' => 'Fokus pada penguasaan teknologi seperti MS Office, pemrograman web, dan GitHub.'], ['icon' => 'bi-people', 'title' => 'Komunitas Kreatif', 'description' => 'Membangun jaringan dan komunitas dengan tujuan pengembangan keterampilan.'], ['icon' => 'bi-award', 'title' => 'Pengakuan Global', 'description' => 'Dukungan pencapaian untuk menambah nilai CV Anda.']] as $about)
                             <li>
                                 <i class="bi {{ $about['icon'] }}"></i>
                                 <div>
@@ -106,9 +106,10 @@
             <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
                 <div class="col-xl-10">
                     <div class="text-center">
-                        <h3>Hubungi Kami Sekarang</h3>
-                        <p>Kami siap membantu Anda kapan saja. Lakukan pengiriman barang dengan mitra terpercaya.</p>
-                        <a class="cta-btn" href="#">Hubungi Kami</a>
+                        <h3>Bergabunglah Bersama Kami</h3>
+                        <p>Tingkatkan keterampilan teknologi Anda bersama Workshop Logic. Wujudkan masa depan digital yang
+                            lebih cerah.</p>
+                        <a class="cta-btn" href="#">Daftar Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -121,24 +122,19 @@
         <div class="container section-title" data-aos="fade-up">
             <span>Harga</span>
             <h2>Harga</h2>
-            <p>Pilih paket yang sesuai dengan kebutuhan logistik Anda.</p>
+            <p>Pilih paket pelatihan sesuai dengan durasi dan kebutuhan belajar teknologi Anda.</p>
         </div>
         <div class="container">
             <div class="row gy-4">
-                @foreach ([['title' => 'Paket Gratis', 'price' => 'Rp0', 'features' => ['Layanan dasar', 'Pengiriman lokal', 'Dukungan pelanggan'], 'notIncluded' => ['Layanan premium', 'Jaminan waktu']], ['title' => 'Paket Bisnis', 'price' => 'Rp29.000', 'features' => ['Semua fitur paket gratis', 'Dukungan premium', 'Jaminan waktu'], 'notIncluded' => []], ['title' => 'Paket Profesional', 'price' => 'Rp49.000', 'features' => ['Semua fitur paket bisnis', 'Layanan eksklusif', 'Konsultasi logistik'], 'notIncluded' => []]] as $plan)
+                @foreach ([['title' => 'Paket 2 Jam', 'price' => 'Rp10.000', 'features' => ['Durasi 2 jam', 'Materi dasar', 'Akses online']], ['title' => 'Paket 3 Jam', 'price' => 'Rp15.000', 'features' => ['Durasi 3 jam', 'Materi dasar dan lanjutan', 'Diskusi interaktif']], ['title' => 'Paket 4 Jam', 'price' => 'Rp20.000', 'features' => ['Durasi 4 jam', 'Materi lengkap', 'Sertifikat pelatihan']]] as $plan)
                     <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="{{ $loop->iteration * 100 }}">
                         <div class="pricing-item {{ $loop->iteration === 2 ? 'featured' : '' }}">
                             <h3>{{ $plan['title'] }}</h3>
-                            <h4><sup>{{ $plan['price'] }}</sup><span> / bulan</span></h4>
+                            <h4><sup>{{ $plan['price'] }}</sup><span> / sesi</span></h4>
                             <ul>
                                 @foreach ($plan['features'] as $feature)
                                     <li><i class="bi bi-check"></i> <span>{{ $feature }}</span></li>
                                 @endforeach
-                                @if (!empty($plan['notIncluded']))
-                                    @foreach ($plan['notIncluded'] as $notIncluded)
-                                        <li class="na"><i class="bi bi-x"></i> <span>{{ $notIncluded }}</span></li>
-                                    @endforeach
-                                @endif
                             </ul>
                             <a href="#" class="buy-btn">Pilih Paket</a>
                         </div>
@@ -148,4 +144,5 @@
         </div>
     </section>
     <!-- Akhir Bagian Harga -->
+
 @endsection
