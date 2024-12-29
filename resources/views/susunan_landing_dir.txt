@@ -1,0 +1,12 @@
+resources/views/
+├── layouts/
+│   ├── app.blade.php (Layout utama)
+├── includes/
+│   ├── header.blade.php (Header)
+│   ├── footer.blade.php (Footer)
+│   ├── navbar.blade.php (Navbar)
+│   ├── preloader.blade.php (Preloader)
+├── pages/
+│   ├── home.blade.php (Halaman home)
+│   ├── about.blade.php (Halaman about)
+│   ├── contact.blade.php (Halaman contact)

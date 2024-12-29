@@ -6,6 +6,10 @@
     },
     "routes": [
         {
+            "src": "/landing/(.*)",
+            "dest": "/public/landing/$1"
+        },
+        {
             "src": "/build/(.*)",
             "dest": "/build/$1"
         },
@@ -16,7 +20,7 @@
     ],
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "true",
+        "APP_DEBUG": "false",
         "APP_URL": "https://workshop-logic-nf.vercel.app",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
