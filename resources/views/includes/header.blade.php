@@ -6,6 +6,6 @@
 
         @include('includes.navbar')
 
-        <a class="btn-getstarted" href="{{ url('/get-a-quote') }}">Get a Quote</a>
+        <a class="btn-getstarted" href="{{ url('https://www.linkedin.com/in/eko-haryono-290/') }}">Promosi Dev</a>
     </div>
 </header>
