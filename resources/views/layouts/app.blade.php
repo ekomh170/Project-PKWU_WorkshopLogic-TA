@@ -53,7 +53,7 @@
 
     <!-- Vendor JS Files -->
     <script src="{{ $assetFunction('landing/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ $assetFunction('landing/vendor/php-email-form/validate.js') }}"></script>
+    {{-- <script src="{{ $assetFunction('landing/vendor/php-email-form/validate.js') }}"></script> --}}
     <script src="{{ $assetFunction('landing/vendor/aos/aos.js') }}"></script>
     <script src="{{ $assetFunction('landing/vendor/purecounter/purecounter_vanilla.js') }}"></script>
     <script src="{{ $assetFunction('landing/vendor/glightbox/js/glightbox.min.js') }}"></script>
