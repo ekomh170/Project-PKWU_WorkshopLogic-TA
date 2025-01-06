@@ -113,7 +113,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 position-relative align-self-start order-lg-last order-first"
                     data-aos="fade-up" data-aos-delay="200">
                     <div style="max-width: 500px; margin: 0 auto; position: relative;">
-                        <img src="{{ $assetFunction('img/Pemateri.jpg') }}"
+                        <img src="{{ $assetFunction('landing/img/Pemateri.jpg') }}"
                             style="max-width: 100%; height: auto; border-radius: 8px; object-fit: cover;"
                             alt="Pemateri Workshop">
                         <a href="https://youtu.be/EoBUbyZcGe4" class="glightbox pulsating-play-btn"

@@ -30,7 +30,7 @@
             <div class="row gy-4">
                 <div class="col-lg-6 position-relative align-self-start order-lg-last order-first" data-aos="fade-up"
                     data-aos-delay="200">
-                    <img src="{{ $assetFunction('img/Pemateri.jpg') }}" class="img-fluid"
+                    <img src="{{ $assetFunction('landing/img/Pemateri.jpg') }}" class="img-fluid"
                         style="width: 100%; max-width: 800px; height: 480px; object-fit: cover;" alt="Tentang Kami">
                     <a href="https://youtu.be/EoBUbyZcGe4" class="glightbox pulsating-play-btn"></a>
                 </div>
@@ -92,7 +92,7 @@
                 @foreach ([
             ['image' => 'team/team-1.jpg', 'name' => 'Nur Fadillah', 'role' => 'Hustler', 'description' => 'Meningkatkan koneksi dan peluang untuk Workshop Logic melalui strategi yang efektif.'],
             ['image' => 'team/team-1.jpg', 'name' => 'Muhammad Andhika Thata', 'role' => 'Hustler', 'description' => 'Mengelola peluang bisnis dan memperluas cakupan kemitraan kami.'],
-            ['image' => 'team/eko_hacker.JPG', 'name' => 'Eko Muchamad Haryono', 'role' => 'Hacker', 'description' => 'Mengembangkan solusi teknologi yang inovatif dan efisien.'],
+            ['image' => 'team/eko_hacker.jpg', 'name' => 'Eko Muchamad Haryono', 'role' => 'Hacker', 'description' => 'Mengembangkan solusi teknologi yang inovatif dan efisien.'],
             ['image' => 'team/team-2.jpg', 'name' => 'Fatiya Labibah', 'role' => 'Hacker', 'description' => 'Menyediakan solusi teknologi mutakhir untuk kebutuhan pelatihan.'],
             ['image' => 'team/team-3.jpg', 'name' => 'Muhammad Zen Alby', 'role' => 'Hipster', 'description' => 'Mendesain pengalaman visual yang menarik dan kreatif untuk peserta pelatihan.'],
             ['image' => 'team/team-2.jpg', 'name' => 'Nurmila', 'role' => 'Hipster', 'description' => 'Mengembangkan branding kreatif dan mendukung identitas visual Workshop Logic.'],
