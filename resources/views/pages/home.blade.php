@@ -108,23 +108,36 @@
     <!-- Bagian Tentang Kami -->
     <section id="about" class="about section">
         <div class="container">
-            <div class="row gy-4">
-                <div class="col-lg-6 position-relative align-self-start order-lg-last order-first" data-aos="fade-up"
-                    data-aos-delay="200">
-                    <img src="{{ $assetFunction('landing/img/about.jpg') }}" class="img-fluid" alt="">
-                    <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+            <div class="row gy-4 align-items-center">
+                <!-- Kolom Gambar dan Video -->
+                <div class="col-lg-6 col-md-6 col-sm-12 position-relative align-self-start order-lg-last order-first"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div style="max-width: 500px; margin: 0 auto; position: relative;">
+                        <img src="{{ $assetFunction('img/Pemateri.jpg') }}"
+                            style="max-width: 100%; height: auto; border-radius: 8px; object-fit: cover;"
+                            alt="Pemateri Workshop">
+                        <a href="https://youtu.be/EoBUbyZcGe4" class="glightbox pulsating-play-btn"
+                            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                        font-size: 2rem; color: #fff; z-index: 10; background: rgba(0, 0, 0, 0.6);
+                        border-radius: 50%; padding: 10px; transition: transform 0.3s ease-in-out;">
+                        </a>
+                    </div>
                 </div>
-                <div class="col-lg-6 content order-last order-lg-first" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Tentang Workshop Logic</h3>
+
+                <!-- Kolom Konten -->
+                <div class="col-lg-6 col-md-6 col-sm-12 content order-last order-lg-first" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <h3 style="margin-bottom: 1.5rem;">Tentang Workshop Logic</h3>
                     <p>Workshop Logic adalah solusi untuk membantu pelajar dan komunitas muda menguasai teknologi praktis
                         yang relevan dengan kebutuhan dunia kerja.</p>
-                    <ul>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
                         @foreach ([['icon' => 'bi-lightbulb', 'title' => 'Keterampilan Teknologi', 'description' => 'Fokus pada penguasaan teknologi seperti MS Office, pemrograman web, dan GitHub.'], ['icon' => 'bi-people', 'title' => 'Komunitas Kreatif', 'description' => 'Membangun jaringan dan komunitas dengan tujuan pengembangan keterampilan.'], ['icon' => 'bi-award', 'title' => 'Pengakuan Global', 'description' => 'Dukungan pencapaian untuk menambah nilai CV Anda.']] as $about)
-                            <li>
-                                <i class="bi {{ $about['icon'] }}"></i>
+                            <li style="display: flex; align-items: start; margin-bottom: 1rem;">
+                                <i class="bi {{ $about['icon'] }}"
+                                    style="font-size: 1.5rem; color: #007bff; margin-right: 1rem;"></i>
                                 <div>
-                                    <h5>{{ $about['title'] }}</h5>
-                                    <p>{{ $about['description'] }}</p>
+                                    <h5 style="margin-bottom: 0.5rem;">{{ $about['title'] }}</h5>
+                                    <p style="margin: 0;">{{ $about['description'] }}</p>
                                 </div>
                             </li>
                         @endforeach
@@ -134,6 +147,8 @@
         </div>
     </section>
     <!-- Akhir Bagian Tentang Kami -->
+
+
 
     <!-- Bagian Ajakan -->
     <section id="call-to-action" class="call-to-action section dark-background">
@@ -145,7 +160,7 @@
                         <h3>Bergabunglah Bersama Kami</h3>
                         <p>Tingkatkan keterampilan teknologi Anda bersama Workshop Logic. Wujudkan masa depan digital yang
                             lebih cerah.</p>
-                        <a class="cta-btn" href="#">Daftar Sekarang</a>
+                        <a class="cta-btn" href="{{ url('/workshops/register') }}">Daftar Sekarang</a>
                     </div>
                 </div>
             </div>
