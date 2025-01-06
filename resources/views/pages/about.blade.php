@@ -30,8 +30,9 @@
             <div class="row gy-4">
                 <div class="col-lg-6 position-relative align-self-start order-lg-last order-first" data-aos="fade-up"
                     data-aos-delay="200">
-                    <img src="{{ $assetFunction('landing/img/about.jpg') }}" class="img-fluid" alt="Tentang Kami">
-                    <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+                    <img src="{{ $assetFunction('img/Pemateri.jpg') }}" class="img-fluid"
+                        style="width: 100%; max-width: 800px; height: 480px; object-fit: cover;" alt="Tentang Kami">
+                    <a href="https://youtu.be/EoBUbyZcGe4" class="glightbox pulsating-play-btn"></a>
                 </div>
                 <div class="col-lg-6 content order-last order-lg-first" data-aos="fade-up" data-aos-delay="100">
                     <h3>Tentang Kami</h3>
@@ -65,7 +66,7 @@
     <section id="stats" class="stats section">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-4">
-                @foreach ([['count' => 20, 'label' => 'Peserta'], ['count' => 10, 'label' => 'Pelatihan'], ['count' => 6, 'label' => 'Paket Kelas'], ['count' => 5, 'label' => 'Pengajar']] as $stat)
+                @foreach ([['count' => 20, 'label' => 'Peserta'], ['count' => 10, 'label' => 'Pelatihan'], ['count' => 6, 'label' => 'Paket Kelas'], ['count' => 6, 'label' => 'Pengajar']] as $stat)
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
                             <span data-purecounter-start="0" data-purecounter-end="{{ $stat['count'] }}"
@@ -91,7 +92,7 @@
                 @foreach ([
             ['image' => 'team/team-1.jpg', 'name' => 'Nur Fadillah', 'role' => 'Hustler', 'description' => 'Meningkatkan koneksi dan peluang untuk Workshop Logic melalui strategi yang efektif.'],
             ['image' => 'team/team-1.jpg', 'name' => 'Muhammad Andhika Thata', 'role' => 'Hustler', 'description' => 'Mengelola peluang bisnis dan memperluas cakupan kemitraan kami.'],
-            ['image' => 'team/team-3.jpg', 'name' => 'Eko Muchamad Haryono', 'role' => 'Hacker', 'description' => 'Mengembangkan solusi teknologi yang inovatif dan efisien.'],
+            ['image' => 'team/eko_hacker.JPG', 'name' => 'Eko Muchamad Haryono', 'role' => 'Hacker', 'description' => 'Mengembangkan solusi teknologi yang inovatif dan efisien.'],
             ['image' => 'team/team-2.jpg', 'name' => 'Fatiya Labibah', 'role' => 'Hacker', 'description' => 'Menyediakan solusi teknologi mutakhir untuk kebutuhan pelatihan.'],
             ['image' => 'team/team-3.jpg', 'name' => 'Muhammad Zen Alby', 'role' => 'Hipster', 'description' => 'Mendesain pengalaman visual yang menarik dan kreatif untuk peserta pelatihan.'],
             ['image' => 'team/team-2.jpg', 'name' => 'Nurmila', 'role' => 'Hipster', 'description' => 'Mengembangkan branding kreatif dan mendukung identitas visual Workshop Logic.'],
