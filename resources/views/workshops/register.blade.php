@@ -10,7 +10,7 @@
 
     <!-- Judul Halaman -->
     <div class="page-title dark-background" data-aos="fade"
-        style="background-image: url({{ $assetFunction('landing/img/page-title-bg.jpg') }});">
+        style="background-image: url({{ $assetFunction('landing/img/header.jpg') }});">
         <div class="container position-relative">
             <h1>Daftar Workshop</h1>
             <p>Bergabunglah dengan pelatihan kami untuk meningkatkan keterampilan teknologi Anda.</p>

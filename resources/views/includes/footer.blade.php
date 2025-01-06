@@ -3,9 +3,10 @@
         <div class="row gy-4">
             <div class="col-lg-5 col-md-12 footer-about">
                 <a href="{{ url('/') }}" class="logo d-flex align-items-center">
-                    <span class="sitename">Logis</span>
+                    <img src="{{ $assetFunction('landing/img/logo_workshop.png') }}" alt="Logo" style="height: 40px; width:40px; margin-right: 10px;">
+                    <span class="">Workshop Logic</span>
                 </a>
-                <p>Cras fermentum odio eu feugiat...</p>
+                <p>Skill Dasar, Impact Besar!</p>
                 <div class="social-links d-flex mt-4">
                     <a href=""><i class="bi bi-twitter"></i></a>
                     <a href=""><i class="bi bi-facebook"></i></a>
@@ -14,13 +15,16 @@
             <div class="col-lg-2 col-6 footer-links">
                 <h4>Useful Links</h4>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#workshop-material">Materi</a></li>
+                    <li><a href="{{ url('/contact') }}" class="{{ Request::is('contact') ? 'active' : '' }}">Contact Us</a></li>
+                    <li><a href="{{ url('/workshops/register') }}">Daftar Workshop</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
                 <h4>Contact Us</h4>
-                <p>A108 Adam Street<br>New York, NY<br>United States</p>
+                <p>Kampus Nurul Fikri<br>Jakarta Selatan<br>Indonesia</p>
                 <p><strong>Phone:</strong> +1 5589 55488 55<br><strong>Email:</strong> info@example.com</p>
             </div>
         </div>

@@ -5,7 +5,7 @@
 @section('content')
     <!-- Judul Halaman -->
     <div class="page-title dark-background" data-aos="fade"
-        style="background-image: url({{ asset('landing/img/page-title-bg.jpg') }});">
+        style="background-image: url({{ asset('landing/img/header.jpg') }});">
         <div class="container position-relative">
             <h1>Kontak</h1>
             <p>Jika Anda memiliki pertanyaan, jangan ragu untuk menghubungi kami. Kami siap membantu Anda!</p>

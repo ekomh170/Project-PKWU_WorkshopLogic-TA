@@ -10,7 +10,7 @@
 
     <!-- Judul Halaman -->
     <div class="page-title dark-background" data-aos="fade"
-        style="background-image: url({{ $assetFunction('landing/img/page-title-bg.jpg') }});">
+        style="background-image: url({{ $assetFunction('landing/img/header.jpg') }});">
         <div class="container position-relative">
             <h1>Tentang Kami</h1>
             <p>Workshop Logic hadir untuk meningkatkan literasi dan keterampilan teknologi generasi muda.</p>
@@ -65,7 +65,7 @@
     <section id="stats" class="stats section">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-4">
-                @foreach ([['count' => 232, 'label' => 'Peserta'], ['count' => 521, 'label' => 'Pelatihan'], ['count' => 1453, 'label' => 'Jam Dukungan'], ['count' => 32, 'label' => 'Pengajar']] as $stat)
+                @foreach ([['count' => 20, 'label' => 'Peserta'], ['count' => 10, 'label' => 'Pelatihan'], ['count' => 6, 'label' => 'Paket Kelas'], ['count' => 5, 'label' => 'Pengajar']] as $stat)
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
                             <span data-purecounter-start="0" data-purecounter-end="{{ $stat['count'] }}"
@@ -122,7 +122,7 @@
 
     <!-- Bagian Testimonial -->
     <section id="testimonials" class="testimonials section dark-background">
-        <img src="{{ $assetFunction('landing/img/testimonials-bg.jpg') }}" class="testimonials-bg" alt="Latar Testimonial">
+        <img src="{{ $assetFunction('landing/img/header.jpg') }}" class="testimonials-bg" alt="Latar Testimonial">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="swiper init-swiper">
                 <script type="application/json" class="swiper-config">
