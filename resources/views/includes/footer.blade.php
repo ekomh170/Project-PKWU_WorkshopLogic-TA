@@ -6,7 +6,7 @@
                     <img src="{{ $assetFunction('landing/img/logo_workshop.png') }}" alt="Logo" style="height: 40px; width:40px; margin-right: 10px;">
                     <span class="">Workshop Logic</span>
                 </a>
-                <p>Skill Dasar, Impact Besar!</p>
+                <p>Pintar Berlogika</p>
                 <div class="social-links d-flex mt-4">
                     <a href=""><i class="bi bi-twitter"></i></a>
                     <a href=""><i class="bi bi-facebook"></i></a>
