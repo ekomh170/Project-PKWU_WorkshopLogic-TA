@@ -14,7 +14,7 @@
     @endphp
 
     <!-- Favicons -->
-    <link href="{{ $assetFunction('landing/img/favicon.png') }}" rel="icon">
+    <link href="{{ $assetFunction('landing/img/logo_workshop.png') }}" rel="icon">
     <link href="{{ $assetFunction('landing/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Fonts -->

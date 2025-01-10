@@ -80,36 +80,31 @@
                 </div>
 
                 <div class="col-lg-8">
-                    <form action="{{ url('/kirim-pesan') }}" method="post" class="php-email-form" data-aos="fade-up"
-                        data-aos-delay="300">
+                    <form action="{{ url('/kirim-pesan') }}" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
                         @csrf
                         <div class="row gy-4">
-
                             <div class="col-md-6">
                                 <input type="text" name="name" class="form-control" placeholder="Nama Anda" required>
                             </div>
-
+                    
                             <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" placeholder="Email Anda" required>
+                                <input type="email" name="email" class="form-control" placeholder="Email Anda" required>
                             </div>
-
+                    
                             <div class="col-md-12">
-                                <input type="text" class="form-control" name="subject" placeholder="Subjek" required>
+                                <input type="text" name="subject" class="form-control" placeholder="Subjek" required>
                             </div>
-
+                    
                             <div class="col-md-12">
-                                <textarea class="form-control" name="message" rows="6" placeholder="Pesan Anda" required></textarea>
+                                <textarea name="message" class="form-control" rows="6" placeholder="Pesan Anda" required></textarea>
                             </div>
-
+                    
                             <div class="col-md-12 text-center">
-                                <div class="loading">Memuat...</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Pesan Anda telah terkirim. Terima kasih!</div>
-
                                 <button type="submit">Kirim Pesan</button>
                             </div>
                         </div>
                     </form>
+                    
                 </div>
                 <!-- Akhir Form Kontak -->
             </div>
