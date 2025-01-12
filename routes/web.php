@@ -11,7 +11,8 @@ Route::get('/', [PageController::class, 'home'])->name('home');
 
 // Route untuk About
 Route::get('/about', [PageController::class, 'about'])->name('about');
-
+// Route untuk Product
+Route::get('/product', [PageController::class, 'product'])->name('product');
 // Route untuk Contact
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 // Route untuk mengirim pesan

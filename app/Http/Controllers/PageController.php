@@ -35,4 +35,10 @@ class PageController extends Controller
     {
         return view('pages.contact');
     }
+
+    // Menambahkan method product
+    public function product()
+    {
+        return view('pages.product');
+    }
 }

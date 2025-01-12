@@ -8,8 +8,9 @@
                 </a>
                 <p>Pintar Berlogika</p>
                 <div class="social-links d-flex mt-4">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/workshop_logic?igsh=MXg0Zm5mYWczM29saw=="><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@workshop_logic?_t=ZS-8t0Vm6QtZWS&_r=1"><i class="bi bi-tiktok"></i></a>
                 </div>
             </div>
             <div class="col-lg-2 col-6 footer-links">
@@ -17,8 +18,8 @@
                 <ul>
                     <li><a href="#">Beranda</a></li>
                     <li><a href="#about">Tentang Kami</a></li>
-                    <li><a href="#workshop-material">Materi</a></li>
-                    <li><a href="{{ url('/contact') }}" class="{{ Request::is('contact') ? 'active' : '' }}">Contact Us</a></li>
+                    <li><a href="{{ url('/product') }}">Produk</a></li>
+                    <li><a href="{{ url('/contact') }}" class="{{ Request::is('contact') ? 'active' : '' }}">Kontak</a></li>
                     <li><a href="{{ url('/workshops/register') }}">Daftar Workshop</a></li>
                 </ul>
             </div>

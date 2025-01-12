@@ -22,7 +22,7 @@
 
                     <form action="#" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up"
                         data-aos-delay="200">
-                        <input type="text" class="form-control" placeholder="Bidang pelatihan yang Anda butuhkan">
+                        <input type="text" class="form-control" disabled ="Bidang pelatihan yang Anda butuhkan">
                         <button type="submit" class="btn btn-primary">Cari</button>
                     </form>
 
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
-                    <img src="{{ $assetFunction('landing/img/workshop9 (2).png') }}" class="img-fluid mb-3 mb-lg-0"
+                    <img src="{{ $assetFunction('landing/img/meet online2.png') }}" class="img-fluid mb-3 mb-lg-0"
                         alt="">
                 </div>
             </div>
@@ -86,20 +86,37 @@
         <div class="container">
             <h2 class="text-center mb-5" style="font-weight: bold;">Materi Workshop</h2>
             <div class="row gy-4">
-                @foreach ([['title' => 'Dasar Pemrograman Web', 'description' => 'Belajar HTML, CSS, dan struktur halaman web dasar.', 'icon' => 'fa-brands fa-html5'], ['title' => 'Dasar-Dasar Microsoft Word', 'description' => 'Format dokumen, tabel, dan desain yang efisien.', 'icon' => 'fa-solid fa-file-word'], ['title' => 'Pengenalan GitHub', 'description' => 'Mengelola repository dan kolaborasi tim.', 'icon' => 'fa-brands fa-github']] as $material)
-                    <div class="col-lg-4 col-md-6 d-flex">
-                        <div class="card p-4 shadow w-100 d-flex align-items-center"
-                            style="backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.8); border-radius: 20px; border: none;">
-                            <div class="icon mb-3" style="color: #004080; font-size: 2rem; margin-right: 15px;">
-                                <i class="{{ $material['icon'] }}"></i>
-                            </div>
-                            <div>
-                                <h5 class="title">{{ $material['title'] }}</h5>
-                                <p class="description">{{ $material['description'] }}</p>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
+                @foreach ([
+    [
+        'title' => 'Basis Data', 
+        'description' => 'Pelajari konsep dasar basis data, termasuk cara merancang, mengelola, dan mengoptimalkan database. Pahami struktur data, relasi antar tabel, dan teknik manipulasi data menggunakan SQL untuk mendukung pengembangan aplikasi yang efisien.', 
+        'icon' => 'fa-solid fa-database'
+    ],
+    [
+        'title' => 'Google Docs', 
+        'description' => 'Kuasi fitur-fitur Google Docs untuk meningkatkan produktivitas. Pelajari cara membuat dokumen yang terstruktur, menambahkan tabel dan grafik, serta memanfaatkan kolaborasi real-time untuk pekerjaan tim yang lebih efektif.', 
+        'icon' => 'fa-solid fa-file-word'
+    ],
+    [
+        'title' => 'Pengenalan GitHub', 
+        'description' => 'Dapatkan pemahaman mendalam tentang GitHub sebagai platform manajemen versi. Pelajari cara membuat dan mengelola repository, berkolaborasi dalam tim, melakukan pull request, serta menggunakan Git untuk melacak perubahan pada kode secara efisien.', 
+        'icon' => 'fa-brands fa-github'
+    ]
+] as $material)
+    <div class="col-lg-4 col-md-6 d-flex">
+        <div class="card p-4 shadow w-100 d-flex align-items-center"
+            style="backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.8); border-radius: 20px; border: none;">
+            <div class="icon mb-3" style="color: #004080; font-size: 2rem; margin-right: 15px;">
+                <i class="{{ $material['icon'] }}"></i>
+            </div>
+            <div>
+                <h5 class="title">{{ $material['title'] }}</h5>
+                <p class="description" style="text-align: justify; font-size: 14px;">{{ $material['description'] }}</p>
+            </div>
+        </div>
+    </div>
+@endforeach
+
             </div>
         </div>
     </section>
@@ -187,7 +204,7 @@
                                     <li><i class="bi bi-check"></i> <span>{{ $feature }}</span></li>
                                 @endforeach
                             </ul>
-                            <a href="#" class="buy-btn">Pilih Paket</a>
+                            <a href="{{ url('/workshops/register') }}" class="buy-btn">Pilih Paket</a>
                         </div>
                     </div>
                 @endforeach

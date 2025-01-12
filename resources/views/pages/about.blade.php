@@ -10,7 +10,7 @@
 
     <!-- Judul Halaman -->
     <div class="page-title dark-background" data-aos="fade"
-        style="background-image: url({{ $assetFunction('landing/img/header.jpg') }});">
+        style="background-image: url({{ $assetFunction('landing/img/latar2.jpg') }});">
         <div class="container position-relative">
             <h1>Tentang Kami</h1>
             <p>Workshop Logic hadir untuk meningkatkan literasi dan keterampilan teknologi generasi muda.</p>
@@ -90,12 +90,12 @@
         <div class="container">
             <div class="row">
                 @foreach ([
-            ['image' => 'team/team-1.jpg', 'name' => 'Nur Fadillah', 'role' => 'Hustler', 'description' => 'Meningkatkan koneksi dan peluang untuk Workshop Logic melalui strategi yang efektif.'],
-            ['image' => 'team/team-1.jpg', 'name' => 'Muhammad Andhika Thata', 'role' => 'Hustler', 'description' => 'Mengelola peluang bisnis dan memperluas cakupan kemitraan kami.'],
+            ['image' => 'team/bangbot-hustler.jpg', 'name' => 'Nur Fadillah', 'role' => 'Hustler', 'description' => 'Meningkatkan koneksi dan peluang untuk Workshop Logic melalui strategi yang efektif.'],
+            ['image' => 'team/dika-hustler.jpg', 'name' => 'Muhammad Andhika Thata', 'role' => 'Hustler', 'description' => 'Mengelola peluang bisnis dan memperluas cakupan kemitraan kami.'],
             ['image' => 'team/eko_hacker.jpg', 'name' => 'Eko Muchamad Haryono', 'role' => 'Hacker', 'description' => 'Mengembangkan solusi teknologi yang inovatif dan efisien.'],
-            ['image' => 'team/team-2.jpg', 'name' => 'Fatiya Labibah', 'role' => 'Hacker', 'description' => 'Menyediakan solusi teknologi mutakhir untuk kebutuhan pelatihan.'],
-            ['image' => 'team/team-3.jpg', 'name' => 'Muhammad Zen Alby', 'role' => 'Hipster', 'description' => 'Mendesain pengalaman visual yang menarik dan kreatif untuk peserta pelatihan.'],
-            ['image' => 'team/team-2.jpg', 'name' => 'Nurmila', 'role' => 'Hipster', 'description' => 'Mengembangkan branding kreatif dan mendukung identitas visual Workshop Logic.'],
+            ['image' => 'team/fatiya-hacker.jpg', 'name' => 'Fatiya Labibah', 'role' => 'Hacker', 'description' => 'Menyediakan solusi teknologi mutakhir untuk kebutuhan pelatihan.'],
+            ['image' => 'team/zen-hipsler.jpg', 'name' => 'Muhammad Zen Alby', 'role' => 'Hipster', 'description' => 'Mendesain pengalaman visual yang menarik dan kreatif untuk peserta pelatihan.'],
+            ['image' => 'team/mila-hipsler.jpg', 'name' => 'Nurmila', 'role' => 'Hipster', 'description' => 'Mengembangkan branding kreatif dan mendukung identitas visual Workshop Logic.'],
         ] as $member)
                     <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}">
                         <div class="member">
@@ -117,13 +117,22 @@
                 @endforeach
             </div>
         </div>
+        <style>
+            .member img {
+                width: 100%; 
+                height: 400px; 
+                object-fit: cover; 
+                
+            }
+        </style>
+        
     </section>
 
     <!-- Akhir Bagian Tim -->
 
     <!-- Bagian Testimonial -->
     <section id="testimonials" class="testimonials section dark-background">
-        <img src="{{ $assetFunction('landing/img/header.jpg') }}" class="testimonials-bg" alt="Latar Testimonial">
+        <img src="{{ $assetFunction('landing/img/latar2.jpg') }}" class="testimonials-bg" alt="Latar Testimonial">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="swiper init-swiper">
                 <script type="application/json" class="swiper-config">
