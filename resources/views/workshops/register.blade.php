@@ -59,22 +59,21 @@
                         <label for="workshop">Pilih Workshop</label>
                         <select name="workshop" id="workshop" class="form-select" required>
                             <option value="">Pilih Workshop</option>
-                            <option value="dasar-pemrograman-web">Dasar Pemrograman Web (3 Jam - Rp15.000)</option>
-                            <option value="pemrograman-lanjutan">Pemrograman Lanjutan (4 Jam - Rp20.000)</option>
-                            <option value="manajemen-kode-github">Manajemen Kode dengan GitHub (3 Jam - Rp15.000)</option>
-                            <option value="admin-dasar-office-word">Administrasi Dasar: Microsoft Word (3 Jam - Rp15.000)
-                            </option>
-                            <option value="admin-dasar-office-excel">Administrasi Dasar: Microsoft Excel (3 Jam - Rp15.000)
-                            </option>
-                            <option value="admin-dasar-office-ppt">Administrasi Dasar: Microsoft PowerPoint (3 Jam -
-                                Rp15.000)</option>
+                            <option value="Pelatihan Google Docs">Pelatihan Google Docs</option>
+                            <option value="Workshop Basis Data">Workshop Basis Data</option>
+                            <option value="Pengenalan Github">Pengenalan Github</option>
                         </select>
                     </div>
                     <!-- Pesan -->
                     <div class="col-md-12">
                         <label for="message">Pesan (Opsional)</label>
-                        <textarea name="message" id="message" rows="5" class="form-control"
-                            placeholder="Tulis pesan atau catatan tambahan di sini"></textarea>
+                        <textarea name="message" id="message" rows="5" class="form-control">
+Halo, saya [Nama Anda],
+Saya tertarik untuk mengikuti [Nama Workshop] karena [alasan Anda].
+Saya berharap dapat belajar lebih banyak tentang [topik workshop].
+Terima kasih.
+                        </textarea>
+                        <small class="text-muted">*Silakan edit template pesan di atas sesuai kebutuhan Anda.</small>
                     </div>
                     <!-- Submit -->
                     <div class="col-md-12 text-center">
@@ -85,4 +84,36 @@
         </div>
     </section>
     <!-- Akhir Form Pendaftaran -->
+
+    <!-- Pop-Up Modal -->
+    @if (session('success'))
+        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="successModalLabel">Pendaftaran Berhasil</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        {{ session('success') }}
+                        @if (session('wa_link'))
+                            <p class="mt-3">Bergabunglah ke grup WhatsApp melalui tautan di bawah ini:</p>
+                            <a href="{{ session('wa_link') }}" class="btn btn-success mt-2" target="_blank">
+                                Grup WhatsApp
+                            </a>
+                        @endif
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+                successModal.show();
+            });
+        </script>
+    @endif
 @endsection

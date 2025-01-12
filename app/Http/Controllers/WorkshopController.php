@@ -46,7 +46,11 @@ class WorkshopController extends Controller
 
             // Periksa respons dari Google Apps Script
             if ($response->successful() && isset($response->json()['status']) && $response->json()['status'] === 'success') {
-                return redirect()->route('workshops.register')->with('success', 'Pendaftaran berhasil disimpan!');
+                // Tambahkan link grup WA ke session
+                $whatsappGroupLink = 'https://chat.whatsapp.com/IutV8oYZMz302DSEeuwS17'; // Ganti dengan link grup WhatsApp
+                return redirect()->route('workshops.register')
+                    ->with('success', 'Pendaftaran berhasil disimpan!')
+                    ->with('wa_link', $whatsappGroupLink); // Kirim link grup WA
             } else {
                 $errorMessage = $response->json()['message'] ?? 'Kesalahan tidak diketahui dari server.';
                 return redirect()->route('workshops.register')->with('error', 'Gagal menyimpan data: ' . $errorMessage);
