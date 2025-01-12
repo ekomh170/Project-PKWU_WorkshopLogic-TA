@@ -90,12 +90,60 @@
         <div class="container">
             <div class="row">
                 @foreach ([
-            ['image' => 'team/bangbot-hustler.jpg', 'name' => 'Nur Fadillah', 'role' => 'Hustler', 'description' => 'Meningkatkan koneksi dan peluang untuk Workshop Logic melalui strategi yang efektif.'],
-            ['image' => 'team/dika-hustler.jpg', 'name' => 'Muhammad Andhika Thata', 'role' => 'Hustler', 'description' => 'Mengelola peluang bisnis dan memperluas cakupan kemitraan kami.'],
-            ['image' => 'team/eko_hacker.jpg', 'name' => 'Eko Muchamad Haryono', 'role' => 'Hacker', 'description' => 'Mengembangkan solusi teknologi yang inovatif dan efisien.'],
-            ['image' => 'team/fatiya-hacker.jpg', 'name' => 'Fatiya Labibah', 'role' => 'Hacker', 'description' => 'Menyediakan solusi teknologi mutakhir untuk kebutuhan pelatihan.'],
-            ['image' => 'team/zen-hipsler.jpg', 'name' => 'Muhammad Zen Alby', 'role' => 'Hipster', 'description' => 'Mendesain pengalaman visual yang menarik dan kreatif untuk peserta pelatihan.'],
-            ['image' => 'team/mila-hipsler.jpg', 'name' => 'Nurmila', 'role' => 'Hipster', 'description' => 'Mengembangkan branding kreatif dan mendukung identitas visual Workshop Logic.'],
+            [
+                'image' => 'team/bangbot-hustler.jpg',
+                'name' => 'Nur Fadillah',
+                'role' => 'Hustler',
+                'description' => 'Meningkatkan koneksi dan peluang untuk Workshop Logic melalui strategi yang efektif.',
+                'social_links' => [
+                    'instagram' => 'https://instagram.com/nr.fdllhhh',
+                ],
+            ],
+            [
+                'image' => 'team/dika-hustler.jpg',
+                'name' => 'Muhammad Andhika Thata',
+                'role' => 'Hustler',
+                'description' => 'Mengelola peluang bisnis dan memperluas cakupan kemitraan kami.',
+                'social_links' => [
+                    'instagram' => 'https://instagram.com/dikatahta',
+                ],
+            ],
+            [
+                'image' => 'team/eko_hacker.jpg',
+                'name' => 'Eko Muchamad Haryono',
+                'role' => 'Hacker',
+                'description' => 'Mengembangkan solusi teknologi yang inovatif dan efisien.',
+                'social_links' => [
+                    'instagram' => 'https://instagram.com/ekomh_29',
+                ],
+            ],
+            [
+                'image' => 'team/fatiya-hacker.jpg',
+                'name' => 'Fatiya Labibah',
+                'role' => 'Hacker',
+                'description' => 'Menyediakan solusi teknologi mutakhir untuk kebutuhan pelatihan.',
+                'social_links' => [
+                    'instagram' => 'https://instagram.com/dambelsbru_',
+                ],
+            ],
+            [
+                'image' => 'team/zen-hipsler.jpg',
+                'name' => 'Muhammad Zen Alby',
+                'role' => 'Hipster',
+                'description' => 'Mendesain pengalaman visual yang menarik dan kreatif untuk peserta pelatihan.',
+                'social_links' => [
+                    'instagram' => 'https://instagram.com/znalby',
+                ],
+            ],
+            [
+                'image' => 'team/mila-hipsler.jpg',
+                'name' => 'Nurmila',
+                'role' => 'Hipster',
+                'description' => 'Mengembangkan branding kreatif dan mendukung identitas visual Workshop Logic.',
+                'social_links' => [
+                    'instagram' => 'https://instagram.com/milakarmila_mahulete',
+                ],
+            ],
         ] as $member)
                     <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}">
                         <div class="member">
@@ -106,10 +154,10 @@
                                 <span>{{ $member['role'] }}</span>
                                 <p>{{ $member['description'] }}</p>
                                 <div class="social">
-                                    <a href="#"><i class="bi bi-twitter"></i></a>
-                                    <a href="#"><i class="bi bi-facebook"></i></a>
-                                    <a href="#"><i class="bi bi-instagram"></i></a>
-                                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                                    @if (isset($member['social_links']['instagram']))
+                                        <a href="{{ $member['social_links']['instagram'] }}" target="_blank"><i
+                                                class="bi bi-instagram"></i></a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -119,15 +167,12 @@
         </div>
         <style>
             .member img {
-                width: 100%; 
-                height: 400px; 
-                object-fit: cover; 
-                
+                width: 100%;
+                height: 400px;
+                object-fit: cover;
             }
         </style>
-        
     </section>
-
     <!-- Akhir Bagian Tim -->
 
     <!-- Bagian Testimonial -->
