@@ -7,8 +7,9 @@
         </a>
 
         @include('includes.navbar')
-
-        <a class="btn-getstarted" href="{{ url('https://www.linkedin.com/in/eko-haryono-290/') }}">Dev 1</a>
-        <a class="btn-getstarted" href="{{ url('https://www.instagram.com/dambelsbru_/') }}">Dev 2</a>
+        <a class="btn-getstarted" href="{{ url('https://www.instagram.com/workshop_logic') }}"
+            target="_blank">Instagram</a>
+        {{-- <a class="btn-getstarted" href="{{ url('https://www.linkedin.com/in/eko-haryono-290/') }}">Dev 1</a>
+        <a class="btn-getstarted" href="{{ url('https://www.instagram.com/dambelsbru_/') }}">Dev 2</a> --}}
     </div>
 </header>
