@@ -3,3 +3,5 @@ tests
 node_modules
 storage
 .vscode
+.env.deploy.railways
+.env.local
