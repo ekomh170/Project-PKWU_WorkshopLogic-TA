@@ -6,11 +6,16 @@
     },
     "routes": [
         {
+            "src": "/landing/(.*)",
+            "dest": "/public/landing/$1"
+        },
+        {
+            "src": "/build/(.*)",
+            "dest": "/build/$1"
+        },
+        {
             "src": "/(.*)",
-            "headers": {
-                "Location": "https://workshop-logic-nf-ta-kwu.up.railway.app/"
-            },
-            "status": 301
+            "dest": "/api/index.php"
         }
     ],
     "env": {
