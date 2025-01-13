@@ -27,7 +27,7 @@
                     </form>
 
                     <div class="row gy-4" data-aos="fade-up" data-aos-delay="300">
-                        @foreach ([['count' => 20, 'label' => 'Peserta'], ['count' => 10, 'label' => 'Pelatihan'], ['count' => 6, 'label' => 'Paket Workshop'], ['count' => 5, 'label' => 'Pengajar']] as $stat)
+                        @foreach ([['count' => 20, 'label' => 'Peserta'], ['count' => 10, 'label' => 'Pelatihan'], ['count' => 6, 'label' => 'Paket Workshop'], ['count' => 6, 'label' => 'Pengajar']] as $stat)
                             <div class="col-lg-3 col-6">
                                 <div class="stats-item text-center w-100 h-100">
                                     <span data-purecounter-start="0" data-purecounter-end="{{ $stat['count'] }}"
@@ -87,35 +87,36 @@
             <h2 class="text-center mb-5" style="font-weight: bold;">Materi Workshop</h2>
             <div class="row gy-4">
                 @foreach ([
-    [
-        'title' => 'Basis Data', 
-        'description' => 'Pelajari konsep dasar basis data, termasuk cara merancang, mengelola, dan mengoptimalkan database. Pahami struktur data, relasi antar tabel, dan teknik manipulasi data menggunakan SQL untuk mendukung pengembangan aplikasi yang efisien.', 
-        'icon' => 'fa-solid fa-database'
-    ],
-    [
-        'title' => 'Google Docs', 
-        'description' => 'Kuasi fitur-fitur Google Docs untuk meningkatkan produktivitas. Pelajari cara membuat dokumen yang terstruktur, menambahkan tabel dan grafik, serta memanfaatkan kolaborasi real-time untuk pekerjaan tim yang lebih efektif.', 
-        'icon' => 'fa-solid fa-file-word'
-    ],
-    [
-        'title' => 'Pengenalan GitHub', 
-        'description' => 'Dapatkan pemahaman mendalam tentang GitHub sebagai platform manajemen versi. Pelajari cara membuat dan mengelola repository, berkolaborasi dalam tim, melakukan pull request, serta menggunakan Git untuk melacak perubahan pada kode secara efisien.', 
-        'icon' => 'fa-brands fa-github'
-    ]
-] as $material)
-    <div class="col-lg-4 col-md-6 d-flex">
-        <div class="card p-4 shadow w-100 d-flex align-items-center"
-            style="backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.8); border-radius: 20px; border: none;">
-            <div class="icon mb-3" style="color: #004080; font-size: 2rem; margin-right: 15px;">
-                <i class="{{ $material['icon'] }}"></i>
-            </div>
-            <div>
-                <h5 class="title">{{ $material['title'] }}</h5>
-                <p class="description" style="text-align: justify; font-size: 14px;">{{ $material['description'] }}</p>
-            </div>
-        </div>
-    </div>
-@endforeach
+            [
+                'title' => 'Basis Data',
+                'description' => 'Pelajari konsep dasar basis data, termasuk cara merancang, mengelola, dan mengoptimalkan database. Pahami struktur data, relasi antar tabel, dan teknik manipulasi data menggunakan SQL untuk mendukung pengembangan aplikasi yang efisien.',
+                'icon' => 'fa-solid fa-database',
+            ],
+            [
+                'title' => 'Google Docs',
+                'description' => 'Kuasi fitur-fitur Google Docs untuk meningkatkan produktivitas. Pelajari cara membuat dokumen yang terstruktur, menambahkan tabel dan grafik, serta memanfaatkan kolaborasi real-time untuk pekerjaan tim yang lebih efektif.',
+                'icon' => 'fa-solid fa-file-word',
+            ],
+            [
+                'title' => 'Pengenalan GitHub',
+                'description' => 'Dapatkan pemahaman mendalam tentang GitHub sebagai platform manajemen versi. Pelajari cara membuat dan mengelola repository, berkolaborasi dalam tim, melakukan pull request, serta menggunakan Git untuk melacak perubahan pada kode secara efisien.',
+                'icon' => 'fa-brands fa-github',
+            ],
+        ] as $material)
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <div class="card p-4 shadow w-100 d-flex align-items-center"
+                            style="backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.8); border-radius: 20px; border: none;">
+                            <div class="icon mb-3" style="color: #004080; font-size: 2rem; margin-right: 15px;">
+                                <i class="{{ $material['icon'] }}"></i>
+                            </div>
+                            <div>
+                                <h5 class="title">{{ $material['title'] }}</h5>
+                                <p class="description" style="text-align: justify; font-size: 14px;">
+                                    {{ $material['description'] }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
 
             </div>
         </div>
