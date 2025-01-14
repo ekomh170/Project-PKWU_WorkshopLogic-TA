@@ -32,6 +32,13 @@
             <p>Isi formulir di bawah ini untuk mendaftar pada workshop yang Anda pilih.</p>
         </div>
         <div class="container">
+            <!-- Menampilkan pesan error dari JSON -->
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    <strong>Kesalahan:</strong> {{ session('error') }}
+                </div>
+            @endif
+
             <form action="{{ route('workshops.store') }}" method="POST" class="php-email-form" data-aos="fade-up"
                 data-aos-delay="100">
                 @csrf
@@ -64,6 +71,21 @@
                             <option value="Pengenalan Github">Pengenalan Github</option>
                         </select>
                     </div>
+                    <!-- Status & Kabupaten/Kota -->
+                    <div class="col-md-12">
+                        <label for="status_and_location">Status dan Lokasi</label>
+                        <div class="input-group">
+                            <select name="status" id="status" class="form-select" required>
+                                <option value="">Pilih Status</option>
+                                <option value="Pelajar">Pelajar</option>
+                                <option value="Mahasiswa">Mahasiswa</option>
+                                <option value="Umum">Umum</option>
+                            </select>
+                            <input type="text" name="location" id="location" class="form-control"
+                                placeholder="Masukkan Kabupaten/Kota" required>
+                        </div>
+                        <small class="text-muted">Contoh: Pelajar - Kabupaten Sleman</small>
+                    </div>
                     <!-- Pesan -->
                     <div class="col-md-12">
                         <label for="message">Pesan (Opsional)</label>
@@ -75,6 +97,15 @@ Terima kasih.
                         </textarea>
                         <small class="text-muted">*Silakan edit template pesan di atas sesuai kebutuhan Anda.</small>
                     </div>
+                    <!-- Jenis Workshop (Tersembunyi) -->
+                    <input type="hidden" name="jenis_workshop" value="Online">
+
+                    <!-- Harga (Tersembunyi) -->
+                    <input type="hidden" name="harga" value="15000">
+
+                    <!-- Konfirmasi Pembayaran (Tersembunyi) -->
+                    <input type="hidden" name="konfirmasi_pembayaran" value="Belum">
+
                     <!-- Submit -->
                     <div class="col-md-12 text-center">
                         <button type="submit" class="btn btn-primary">Daftar Sekarang</button>
@@ -110,6 +141,7 @@ Terima kasih.
             </div>
         </div>
         <script>
+            // Menunggu halaman sepenuhnya dimuat sebelum menampilkan modal
             document.addEventListener('DOMContentLoaded', function() {
                 var successModal = new bootstrap.Modal(document.getElementById('successModal'));
                 successModal.show();
