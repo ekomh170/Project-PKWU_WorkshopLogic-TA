@@ -13,7 +13,7 @@ class WorkshopController extends Controller
     public function __construct()
     {
         // URL aplikasi web Google untuk memproses data pendaftaran
-        $this->webAppUrl = 'https://script.google.com/macros/s/AKfycbz0KiSYQtB3_JSZVl1uSigRWoocz8hikQRhw29a6htBTgCP4PXyZz1rep_QwcGubB_OeA/exec';
+        $this->webAppUrl = 'https://script.google.com/macros/s/AKfycbw4pX1iG6wxGyh1h1RPSJ8jG_t5Jn0iGWHSnCwT22bp-2YUOSkuYEnWG5qZIIR7_Jgi2w/exec';
     }
 
     public function index()
@@ -24,6 +24,9 @@ class WorkshopController extends Controller
 
     public function register(Request $request)
     {
+        // Menambahkan log untuk melihat data request yang masuk
+        logger()->info('Data Request:', $request->all());
+
         // Validasi data yang diterima dari form
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
@@ -41,6 +44,7 @@ class WorkshopController extends Controller
         // Cek jika ada error
         if ($validator->fails()) {
             // Kirim kembali error ke view
+            logger()->error('Validation Error:', $validator->errors()->all());
             return redirect()->route('workshops.register')->withErrors($validator)->withInput();
         }
 
@@ -48,13 +52,11 @@ class WorkshopController extends Controller
             // Data yang sudah divalidasi
             $validatedData = $validator->validated();
 
-            // Log data yang akan dikirim
-            logger()->info('Data yang dikirim ke Google Apps Script:', $validatedData);
+            // Menambahkan log untuk melihat data yang divalidasi
+            logger()->info('Validated Data:', $validatedData);
 
-            // Kirim data ke Google Web App
-            $response = Http::withHeaders([
-                'Content-Type' => 'application/json',
-            ])->post($this->webAppUrl, [
+            // Menyaring data untuk memastikan hanya data yang diinginkan yang dikirim
+            $dataToSend = [
                 'name' => $validatedData['name'],
                 'email' => $validatedData['email'],
                 'phone' => $validatedData['phone'],
@@ -65,20 +67,40 @@ class WorkshopController extends Controller
                 'jenis_workshop' => $validatedData['jenis_workshop'],
                 'harga' => $validatedData['harga'],
                 'konfirmasi_pembayaran' => $validatedData['konfirmasi_pembayaran'],
-            ]);
+            ];
+
+            // Kirim data ke Google Web App
+            $response = Http::withHeaders([
+                'Content-Type' => 'application/json',
+            ])->post($this->webAppUrl, $dataToSend);
+
+            // Log response dari server
+            logger()->info('Response from Google Apps Script:', $response->json());
 
             // Jika respons sukses
-            if ($response->successful() && $response->json('status') === 'success') {
-                // Simpan email ke cache untuk mencegah pendaftaran ulang
-                cache()->put($validatedData['email'], true, now()->addDays(7));
+            if ($response->successful()) {
+                // Menyaring response dan memeriksa status
+                $responseJson = $response->json();
+                // dd($responseJson);
+                if (isset($responseJson['status']) && $responseJson['status'] === 'success') {
+                    // Simpan email ke cache untuk mencegah pendaftaran ulang
+                    cache()->put($validatedData['email'], true, now()->addDays(7));
 
-                // Redirect dengan pesan sukses
-                $whatsappGroupLink = 'https://chat.whatsapp.com/IutV8oYZMz302DSEeuwS17';
-                return redirect()->route('workshops.register')
-                    ->with('success', 'Pendaftaran berhasil disimpan!')
-                    ->with('wa_link', $whatsappGroupLink);
+                    // Redirect dengan pesan sukses
+                    $whatsappGroupLink = 'https://chat.whatsapp.com/IutV8oYZMz302DSEeuwS17';
+                    return redirect()->route('workshops.register')
+                        ->with('success', 'Pendaftaran berhasil disimpan!')
+                        ->with('wa_link', $whatsappGroupLink);
+                } else {
+                    // Jika server memberikan kesalahan
+                    $errorMessage = $responseJson['message'] ?? 'Kesalahan tidak diketahui dari server.';
+                    logger()->error('Error dari Google Apps Script:', [
+                        'response' => $responseJson,
+                    ]);
+                    return redirect()->route('workshops.register')->with('error', 'Gagal menyimpan data: ' . $errorMessage);
+                }
             } else {
-                // Jika server memberikan kesalahan
+                // Jika response gagal
                 $errorMessage = $response->json('message') ?? 'Kesalahan tidak diketahui dari server.';
                 logger()->error('Error dari Google Apps Script:', [
                     'response' => $response->json(),
@@ -86,8 +108,8 @@ class WorkshopController extends Controller
                 return redirect()->route('workshops.register')->with('error', 'Gagal menyimpan data: ' . $errorMessage);
             }
         } catch (\Exception $e) {
-            // Tangani exception
-            logger()->error('Error in WorkshopController@register:', [
+            // Menambahkan log untuk men-debug exception
+            logger()->error('Exception in WorkshopController@register:', [
                 'message' => $e->getMessage(),
                 'trace' => $e->getTraceAsString(),
             ]);
