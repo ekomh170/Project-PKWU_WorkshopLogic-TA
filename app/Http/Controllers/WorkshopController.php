@@ -13,7 +13,7 @@ class WorkshopController extends Controller
     public function __construct()
     {
         // URL aplikasi web Google untuk memproses data pendaftaran
-        $this->webAppUrl = 'https://script.google.com/macros/s/AKfycbw4pX1iG6wxGyh1h1RPSJ8jG_t5Jn0iGWHSnCwT22bp-2YUOSkuYEnWG5qZIIR7_Jgi2w/exec';
+        $this->webAppUrl = 'https://script.google.com/macros/s/AKfycbxCJaqKneiOmdOJDCp0Gn76cdMYudo0TUPNhuqZA2b7aByqROXaIW719f9K_Q9V9O5M/exec';
     }
 
     public function index()
@@ -83,8 +83,6 @@ class WorkshopController extends Controller
                 $responseJson = $response->json();
                 // dd($responseJson);
                 if (isset($responseJson['status']) && $responseJson['status'] === 'success') {
-                    // Simpan email ke cache untuk mencegah pendaftaran ulang
-                    cache()->put($validatedData['email'], true, now()->addDays(7));
 
                     // Redirect dengan pesan sukses
                     $whatsappGroupLink = 'https://chat.whatsapp.com/IutV8oYZMz302DSEeuwS17';

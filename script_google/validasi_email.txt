@@ -1,0 +1,91 @@
+function doPost(e) {
+  try {
+    const SPREADSHEET_ID = "1hdwMoghBpTmbLdTqEfgxFFjuJU5CaFXSK02EDr8_jQs"; // Spreadsheet ID
+    const sheetName = "Sheet1"; // Nama sheet yang digunakan
+
+    let data;
+    try {
+      data = JSON.parse(e.postData.contents); // Parsing data JSON yang diterima
+    } catch (error) {
+      return ContentService.createTextOutput(
+        JSON.stringify({
+          status: "error",
+          message: "Format data tidak valid. Pastikan request menggunakan JSON.",
+        })
+      ).setMimeType(ContentService.MimeType.JSON);
+    }
+
+    // Validasi data yang diterima
+    if (!data.name || !data.email || !data.phone || !data.workshop || !data.status || !data.location || !data.jenis_workshop || !data.harga || !data.konfirmasi_pembayaran) {
+      return ContentService.createTextOutput(
+        JSON.stringify({
+          status: "error",
+          message: "Data tidak lengkap. Pastikan semua kolom wajib diisi.",
+        })
+      ).setMimeType(ContentService.MimeType.JSON);
+    }
+
+    // Validasi format email
+    if (!data.email.match(/^\S+@\S+\.\S+$/)) {
+      return ContentService.createTextOutput(
+        JSON.stringify({
+          status: "error",
+          message: "Format email tidak valid.",
+        })
+      ).setMimeType(ContentService.MimeType.JSON);
+    }
+
+    const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
+    const sheet = spreadsheet.getSheetByName(sheetName);
+
+    // Cek apakah sheet kosong dan tambahkan header jika perlu
+    if (sheet.getLastRow() === 0) {
+      sheet.appendRow([
+        "Timestamp", "Name", "Email", "Phone", "Workshop", "Status", "Location", "Message", "Jenis Workshop", "Price", "Payment Confirmation"
+      ]);
+    }
+
+    // Cek duplikasi berdasarkan email
+    const emails = sheet.getRange(2, 3, sheet.getLastRow(), 1).getValues().flat();
+    if (emails.includes(data.email)) {
+      return ContentService.createTextOutput(
+        JSON.stringify({
+          status: "error",
+          message: "Email sudah terdaftar. Gunakan email yang berbeda.",
+        })
+      ).setMimeType(ContentService.MimeType.JSON);
+    }
+
+    // Tambahkan data ke sheet
+    const timestamp = new Date();
+    sheet.appendRow([
+      timestamp,
+      data.name,
+      data.email,
+      data.phone,
+      data.workshop,
+      data.status,
+      data.location,
+      data.message || "",
+      data.jenis_workshop,
+      data.harga,
+      data.konfirmasi_pembayaran
+    ]);
+
+    return ContentService.createTextOutput(
+      JSON.stringify({
+        status: "success",
+        message: "Data berhasil disimpan.",
+      })
+    ).setMimeType(ContentService.MimeType.JSON);
+
+  } catch (error) {
+    Logger.log("Error: " + error.message); // Log error untuk debugging
+    return ContentService.createTextOutput(
+      JSON.stringify({
+        status: "error",
+        message: error.message,
+      })
+    ).setMimeType(ContentService.MimeType.JSON);
+  }
+}
