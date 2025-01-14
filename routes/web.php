@@ -20,4 +20,4 @@ Route::post('/kirim-pesan', [ContactController::class, 'sendMessage']);
 
 // Route untuk Workshop
 Route::get('/workshops/register', [WorkshopController::class, 'index'])->name('workshops.register'); // Menampilkan form
-Route::post('/workshops/register', [WorkshopController::class, 'store'])->name('workshops.store'); // Menyimpan data
+Route::post('/workshops/store', [WorkshopController::class, 'store'])->name('workshops.store'); // Menyimpan data

@@ -22,7 +22,7 @@ class WorkshopController extends Controller
         return view('workshops.register');
     }
 
-    public function register(Request $request)
+    public function store(Request $request)
     {
         // Menambahkan log untuk melihat data request yang masuk
         logger()->info('Data Request:', $request->all());
