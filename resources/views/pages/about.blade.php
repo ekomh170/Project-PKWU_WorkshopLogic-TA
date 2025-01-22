@@ -196,7 +196,20 @@
                     }
                 </script>
                 <div class="swiper-wrapper">
-                    @foreach ([['image' => 'testimonials/testimonials-1.jpg', 'name' => 'Saul Goodman', 'role' => 'CEO & Founder', 'content' => 'Pelatihan ini sangat membantu saya untuk meningkatkan keterampilan.'], ['image' => 'testimonials/testimonials-2.jpg', 'name' => 'Sarah Wilsson', 'role' => 'Desainer', 'content' => 'Sangat puas dengan materi yang mudah dipahami dan aplikatif.']] as $testimonial)
+                    @foreach ([
+            [
+                'image' => 'testimonials/testimonials-1.jpg',
+                'name' => 'Umar Al Faruq',
+                'role' => 'Mahasiswa NF Angkatan 2023 - TI 12',
+                'content' => 'Kita juga ingin ngucapin terima kasih banyak atas waktu dan bimbingan ka eko. Kita paham kalo pekan tenang ini cukup padat sama tugas-tugas proyek. Kita sangat menghargai pengertian ka eko, serta dukungan yang terus diberikan ke kita. Terima kasih ka eko.',
+            ],
+            [
+                'image' => 'testimonials/testimonials-1.jpg',
+                'name' => 'Autumm Zebtotanel',
+                'role' => 'Mahasiswa NF Angkatan 2023 - TI 12',
+                'content' => 'Semangat terus ka eko ngehandle 2 rombel, makasih banyak juga udah dibikinin cara upload github ada foto dan penjelasannya juga keren.',
+            ],
+        ] as $testimonial)
                         <div class="swiper-slide">
                             <div class="testimonial-item">
                                 <img src="{{ $assetFunction('landing/img/' . $testimonial['image']) }}"
