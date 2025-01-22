@@ -198,13 +198,13 @@
                 <div class="swiper-wrapper">
                     @foreach ([
             [
-                'image' => 'testimonials/testimonials-1.jpg',
+                'image' => 'testimonials/testimonials-1-nf.jpg',
                 'name' => 'Umar Al Faruq',
                 'role' => 'Mahasiswa NF Angkatan 2023 - TI 12',
                 'content' => 'Kita juga ingin ngucapin terima kasih banyak atas waktu dan bimbingan ka eko. Kita paham kalo pekan tenang ini cukup padat sama tugas-tugas proyek. Kita sangat menghargai pengertian ka eko, serta dukungan yang terus diberikan ke kita. Terima kasih ka eko.',
             ],
             [
-                'image' => 'testimonials/testimonials-1.jpg',
+                'image' => 'testimonials/testimonials-1-nf.jpg',
                 'name' => 'Autumm Zebtotanel',
                 'role' => 'Mahasiswa NF Angkatan 2023 - TI 12',
                 'content' => 'Semangat terus ka eko ngehandle 2 rombel, makasih banyak juga udah dibikinin cara upload github ada foto dan penjelasannya juga keren.',
