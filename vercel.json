@@ -1,22 +1,27 @@
 {
     "version": 2,
-    "framework": null,
     "functions": {
         "api/index.php": { "runtime": "vercel-php@0.7.3" }
     },
     "routes": [
         {
             "src": "/(.*)",
-            "headers": {
-                "Location": "https://workshop-logic-nf-ta-kwu.up.railway.app/"
-            },
-            "status": 301
+            "dest": "/api/index.php"
+        },
+        {
+            "src": "/landing/(.*)",
+            "dest": "/public/landing/$1"
+        },
+        {
+            "src": "/build/(.*)",
+            "dest": "/build/$1"
         }
     ],
+    "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
-        "APP_URL": "https://workshop-logic-nf.vercel.app",
+        "APP_URL": "https://project-pkwu.vercel.app",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
