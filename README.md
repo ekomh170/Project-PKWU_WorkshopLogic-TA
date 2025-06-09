@@ -49,5 +49,13 @@ Website: [Workshop Logic](https://workshop-logic-nf.vercel.app/) (Dibangun denga
 ## Kunjungi Kami
 Website: [Workshop Logic](https://workshop-logic-nf.vercel.app/)
 
+## Author
+
+Project by **Eko Muchamad Haryono**
+
+## License
+
+See [LICENSE](LICENSE) for usage restrictions.
+
 ---
 Workshop Logic berkomitmen untuk menciptakan generasi muda yang siap menghadapi era digital dengan keterampilan teknologi yang mumpuni.
