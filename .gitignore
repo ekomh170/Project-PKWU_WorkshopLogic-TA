@@ -1,3 +1,7 @@
+# env
+.env
+
+.env
 .git
 tests
 node_modules
@@ -5,3 +9,40 @@ storage
 .vscode
 .env.deploy.railways
 .env.local
+.vercel
+
+# Laravel sensitive & generated files
+.env.*
+.env.backup
+.env.example
+.env.production
+.env.staging
+.env.testing
+.env.development
+
+# Laravel storage and cache
+/storage/*
+!storage/app/public
+/public/storage
+
+# Laravel logs
+*.log
+
+# Laravel IDE helpers
+.phpstorm.meta.php
+_ide_helper.php
+_ide_helper_models.php
+
+# Composer vendor
+/vendor
+
+# Node modules
+/node_modules
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Vercel & deployment
+.vercel
+.vercelignore

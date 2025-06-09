@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Copyright (c) 2025 Eko Muchamad Haryono
+ * This file is part of a proprietary project. Unauthorized use, distribution, or modification is strictly prohibited.
+ */
+
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
