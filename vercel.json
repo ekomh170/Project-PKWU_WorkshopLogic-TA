@@ -51,7 +51,6 @@
         "SESSION_LIFETIME": "120",
         "SESSION_ENCRYPT": "false",
         "SESSION_PATH": "/",
-        "SESSION_DOMAIN": null,
         "QUEUE_CONNECTION": "sync",
 
         "LOG_CHANNEL": "stderr",
