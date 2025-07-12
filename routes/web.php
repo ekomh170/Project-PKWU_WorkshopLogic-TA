@@ -6,6 +6,16 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\WorkshopController;
 
+// Health check route for Vercel
+Route::get('/health', function () {
+    return response()->json([
+        'status' => 'OK',
+        'timestamp' => now(),
+        'environment' => app()->environment(),
+        'laravel_version' => app()->version()
+    ]);
+});
+
 // Route untuk Home
 Route::get('/', [PageController::class, 'home'])->name('home');
 
