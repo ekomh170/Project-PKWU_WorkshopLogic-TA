@@ -51,7 +51,7 @@ Website: [Workshop Logic](https://workshop-logic-nf.vercel.app/)
 
 ## Author
 
-Project by **Eko Muchamad Haryono**
+Project by **Eko Muchamad Haryono** & **Fatya Labibah**
 
 ## License
 
