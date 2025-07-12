@@ -38,7 +38,14 @@ Route::get('/debug', function () {
 });
 
 // Route untuk Home
-Route::get('/', [PageController::class, 'home'])->name('home');
+Route::get('/', function () {
+    return view('pages.home');
+})->name('home');
+
+// Backup route if view fails
+Route::get('/home-backup', function () {
+    return '<h1>Home Page</h1><p>Laravel berjalan dengan baik di local!</p>';
+});
 
 // Simple fallback for debugging
 Route::get('/simple', function () {
