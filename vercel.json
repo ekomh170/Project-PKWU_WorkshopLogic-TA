@@ -1,8 +1,19 @@
 {
     "version": 2,
     "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.7.3" }
+        "api/index.php": {
+            "runtime": "vercel-php@0.7.3"
+        }
     },
+    "builds": [
+        {
+            "src": "composer.json",
+            "use": "vercel-php@0.7.3",
+            "config": {
+                "includeFiles": "**"
+            }
+        }
+    ],
     "routes": [
         {
             "src": "/build/(.*)",
@@ -17,7 +28,7 @@
             "dest": "/public/storage/$1"
         },
         {
-            "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot))",
+            "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|pdf))",
             "dest": "/public/$1"
         },
         {
@@ -25,27 +36,31 @@
             "dest": "/api/index.php"
         }
     ],
-    "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "false",
+        "APP_DEBUG": "true",
         "APP_KEY": "base64:hfrh+HvY674sfmYgyU8pRhPf+TBtPwoUipeiIW4b/rA=",
         "APP_URL": "https://project-pkwu-workshop-logic-ta.vercel.app",
+        "APP_TIMEZONE": "Asia/Jakarta",
+        "APP_LOCALE": "id",
+        "APP_FALLBACK_LOCALE": "id",
 
-        "APP_CONFIG_CACHE": "/tmp/config.php",
-        "APP_EVENTS_CACHE": "/tmp/events.php",
-        "APP_PACKAGES_CACHE": "/tmp/packages.php",
-        "APP_ROUTES_CACHE": "/tmp/routes.php",
-        "APP_SERVICES_CACHE": "/tmp/services.php",
         "VIEW_COMPILED_PATH": "/tmp",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
 
         "DB_CONNECTION": "sqlite",
         "DB_DATABASE": "/tmp/database.sqlite",
 
         "CACHE_DRIVER": "array",
-        "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie",
+        "SESSION_DRIVER": "array",
         "SESSION_LIFETIME": "120",
-        "SESSION_ENCRYPT": "false"
+        "QUEUE_CONNECTION": "sync",
+
+        "LOG_CHANNEL": "stderr",
+        "LOG_LEVEL": "debug"
     }
 }
